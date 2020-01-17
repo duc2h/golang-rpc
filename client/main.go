@@ -1,9 +1,10 @@
 package main
 
 import (
-	"fmt"
 	"log"
 	"net/rpc"
+
+	"github.com/hoangduc02011998/golang-rpc/client/action"
 )
 
 func main() {
@@ -12,14 +13,16 @@ func main() {
 	if err != nil {
 		log.Fatal("diating: ", err)
 	}
+	action.DoClientWork(client)
 
-	var reply string
+	// var reply string
 
-	err = client.Call("HelloService.Hello", "World 11", &reply)
+	// err = client.Call("HelloService.Hello", "World 11", &reply)
 
-	if err != nil {
-		log.Fatal(err)
-	}
+	// if err != nil {
+	// 	log.Fatal(err)
+	// }
 
-	fmt.Println(reply)
+	// fmt.Println(reply)
+	
 }
